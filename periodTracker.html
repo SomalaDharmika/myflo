@@ -1,0 +1,124 @@
+<html>
+<head>
+<style>
+#heading 
+{
+    padding-top:60px;
+    background-color:#4BC4F9 ;
+    background-position:center center;
+    color:black;
+    position: relative;
+}
+{
+  
+}
+body {
+  height: 100vh;
+  background: linear-gradient(#00ADF2 50%, #16191e 50%);
+}
+.container {
+  width: 90vw;
+  max-width: 37.5em;
+  background-color: #242831;
+  padding: 6em 3em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+.inp-wrapper {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.2em;
+}
+label {
+  color: #d5d5d5;
+  display: block;
+  font-weight: 600;
+}
+input[type="date"] {
+  font-size: 20px;
+  padding: 1em;
+  color: #242831;
+  border: none;
+  outline: none;
+  border-radius: 0.2em;
+  margin-top: 0.6em;
+}
+::-webkit-calendar-picker-indicator {
+  background-color: #00ADF2;
+  padding: 0.2em;
+  cursor: pointer;
+  border-radius: 0.1em;
+}
+h2{
+color:white;
+font-size:30px;
+}
+h1{
+font-size:50px;
+font-family:"Roboto";
+font-weight: 500;
+}
+demo{
+font-size:30px;
+}
+p{
+color:white;
+font-size:20px;
+}
+h4{
+font-size:20px;
+color:white;
+}
+
+select{
+width:100px;
+font-size:19px;
+}
+select:focus {
+        min-width: 100px;
+        width: auto;
+    }
+
+</style>
+ 
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<h1><b><center>Period Calculator</center></b></h1>
+   <div class="container">
+      <div class="inp-wrapper">
+        <div class="date-wrapper">
+   <div class="container1">
+  
+    <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Average Cycle Length of Last Three &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Months in Days&nbsp;&nbsp;<select id="select">
+         <option value="28">28 days</option>
+          <option value="29">29 days</option>
+         <option value="30">30 days</option>
+       </select><br><br></h4></div>
+
+<p><b>Last Period Date<b></p>
+<div id="demo">
+<label for="date-1"></label>
+</div>
+<input type="date" onchange="setSecondDate();" id="date1">
+</div>
+<div class="date-wrapper"><br><br><br><br><br><br>
+<p><b>Expected Next Period<b></p>
+ <label for="date-2"></label>
+<input type="date" id="date2">
+</div>
+      </div>
+    <script type='text/javascript'>
+function setSecondDate() {
+   var days = document.getElementById("select").value;
+  var date = new Date(document.getElementById("date1").value);
+  date.setDate(date.getDate() + parseInt(days));
+  document.getElementById("date2").valueAsDate = date;
+}
+  </script>
+</body>
+</html>
